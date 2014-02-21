@@ -88,7 +88,7 @@ public class chat extends Activity {
             nameValuePairs.add(new BasicNameValuePair("version", "1"));
             nameValuePairs.add(new BasicNameValuePair("action", "push"));
             nameValuePairs.add(new BasicNameValuePair("stringdata", str));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
 
             // Execute HTTP Post Request
             response = httpclient.execute(httppost);

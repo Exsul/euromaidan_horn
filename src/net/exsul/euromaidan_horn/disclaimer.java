@@ -40,7 +40,9 @@ public class disclaimer extends Activity {
         setContentView(R.layout.main);
         context = getApplicationContext();
 
+        /*
         if (!checkPlayServices()) {
+            finish();
             gcm = GoogleCloudMessaging.getInstance(this);
             regid = getRegistrationId(context);
 
@@ -48,6 +50,7 @@ public class disclaimer extends Activity {
                 registerInBackground();
             }
         }
+        */
         final Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +64,7 @@ public class disclaimer extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        checkPlayServices();
+        //checkPlayServices();
     }
 
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
