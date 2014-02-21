@@ -103,6 +103,11 @@ public class chat extends Activity {
         } finally {
             Toast.makeText(this.getApplicationContext(), "Успешно", Toast.LENGTH_LONG).show();
             ((EditText)findViewById(R.id.editText)).setText("");
+            (new Handler()).postDelayed(new Runnable(){
+                public void run()   {
+                    getData();
+                }
+            }, 500);
         }
     }
 
