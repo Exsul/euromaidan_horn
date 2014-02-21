@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Created by enela_000 on 21.02.14.
  */
-public class network extends AsyncTask<Void, Void, Void> {
+public class network extends AsyncTask<Void, Void, String[]> {
     String send = null;
     String ToastMes = null;
     chat me;
@@ -38,7 +38,7 @@ public class network extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
-    protected Void doInBackground(Void... params) {
+    protected String[] doInBackground(Void... params) {
         // http://www.androidsnippets.com/executing-a-http-post-request-with-httpclient
         // Create a new HttpClient and Post Header
         HttpClient httpclient = new DefaultHttpClient();
@@ -83,7 +83,7 @@ public class network extends AsyncTask<Void, Void, Void> {
                     e.printStackTrace();
                 }
             String []arr = stringArray.toArray(new String[0]);
-            me.names = arr;
+            return arr;
         } catch (JSONException e) {
 
         }
@@ -96,7 +96,7 @@ public class network extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
-    protected void onPostExecute(Void msg) {
+    protected void onPostExecute(String[] msg) {
         if (ToastMes != null)
             Toast.makeText(me.getApplicationContext(), ToastMes, Toast.LENGTH_LONG).show();
         ((EditText)me.findViewById(R.id.editText)).setText("");
@@ -108,6 +108,8 @@ public class network extends AsyncTask<Void, Void, Void> {
             }, 500);
             return;
         }
+        if (msg != null)
+            me.names = msg;
         me.UpdateChat(me.names);
 
     }
