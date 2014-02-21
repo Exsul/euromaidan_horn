@@ -114,6 +114,8 @@ public class network extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected void onPostExecute(Integer msg) {
+        if (disclaimer.context == null)
+            return;
         if (AlarmReceiver.GetLastId(disclaimer.context) < msg) {
             AlarmReceiver.SetLastId(disclaimer.context, msg);
             //We get a reference to the NotificationManager
@@ -130,6 +132,8 @@ public class network extends AsyncTask<Void, Void, Integer> {
             PendingIntent StartIntent = PendingIntent.getActivity(disclaimer.context, 0, MyIntent, PendingIntent.FLAG_CANCEL_CURRENT);
             //A PendingIntent will be fired when the notification is clicked. The FLAG_CANCEL_CURRENT flag cancels the pendingintent
 
+            mNotification.defaults |= Notification.DEFAULT_SOUND;
+            mNotification.defaults |= Notification.DEFAULT_VIBRATE;
             mNotification.setLatestEventInfo(disclaimer.context, MyNotificationTitle, MyNotificationText, StartIntent);
 
             notificationManager.notify(NOTIFICATION_ID , mNotification);

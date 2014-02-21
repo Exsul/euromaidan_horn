@@ -61,6 +61,7 @@ public class chat extends Activity {
             final int delay = 10 * 60 * 1000;//milli seconds
 
 
+            AlarmReceiver.me = this;
             setOnetimeTimer(c);
             inited = true;
         }

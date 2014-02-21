@@ -18,6 +18,7 @@ import java.util.Date;
 public class AlarmReceiver extends BroadcastReceiver {
 
     final public static String ONE_TIME = "onetime";
+    public static chat me = null;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -39,7 +40,8 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Toast.makeText(context, msgStr, Toast.LENGTH_LONG).show();
 
-        new network().execute(null, null, null);
+        new network(me).execute(null, null, null);
+        me = null;
 
         //Release the lock
         wl.release();
