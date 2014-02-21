@@ -40,9 +40,10 @@ public class disclaimer extends Activity {
         setContentView(R.layout.main);
         context = getApplicationContext();
 
-        /*
+
         if (!checkPlayServices()) {
             finish();
+            if (true) return;
             gcm = GoogleCloudMessaging.getInstance(this);
             regid = getRegistrationId(context);
 
@@ -50,7 +51,7 @@ public class disclaimer extends Activity {
                 registerInBackground();
             }
         }
-        */
+
         final Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +71,11 @@ public class disclaimer extends Activity {
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
     private boolean checkPlayServices() {
+        finish();
         int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+        finish();
+        if (true) return true;
+
         if (resultCode != ConnectionResult.SUCCESS) {
             if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
                 GooglePlayServicesUtil.getErrorDialog(resultCode, this,
