@@ -10,7 +10,6 @@
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Вы должны понимать, что у нас нет никакой возможности проверить достоверность информации. Поэтому пожалуйста относитесь к любому сообщению как потенциально ложному. Это приложение общедоступно, поэтому вас могут дезинформировать. Его главная цель - быстрый обмен информацией между всеми майдановцами. Говорить может каждый. Будте осторожны."
                 android:layout_alignParentTop="true" android:layout_alignParentLeft="true" android:id="@+id/textView"/>
         <TextView
@@ -21,7 +20,6 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Так же прошу избегать оскорблений и флуда, подбадривающих слов и общих событий. Это приложение не новостная лента и не ваш личный форум."
                 android:id="@+id/textView3" android:layout_below="@+id/textView2" android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
