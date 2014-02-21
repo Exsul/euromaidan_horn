@@ -40,7 +40,7 @@ public class disclaimer extends Activity {
         setContentView(R.layout.main);
         context = getApplicationContext();
 
-
+        /*
         if (!checkPlayServices()) {
             finish();
             if (true) return;
@@ -50,7 +50,7 @@ public class disclaimer extends Activity {
             if (regid.isEmpty()) {
                 registerInBackground();
             }
-        }
+        } */
 
         final Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
