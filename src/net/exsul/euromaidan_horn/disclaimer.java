@@ -1,13 +1,18 @@
 package net.exsul.euromaidan_horn;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.media.RingtoneManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,13 +36,20 @@ public class disclaimer extends Activity {
     public String regid;
     AtomicInteger msgId = new AtomicInteger();
     SharedPreferences prefs;
-    public Context context;
+    public static Context context;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        NotificationManager nf = (NotificationManager)getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        nf.cancel(network.NOTIFICATION_ID++);
+        if (context != null) {
+            startActivity(new Intent(disclaimer.this, chat.class));
+            return;
+        }
         context = getApplicationContext();
 
         /*
@@ -133,10 +145,10 @@ public class disclaimer extends Activity {
     /**
      * @return Application's {@code SharedPreferences}.
      */
-    public SharedPreferences getGCMPreferences(Context context) {
+    public static SharedPreferences getGCMPreferences(Context context) {
         // This sample app persists the registration ID in shared preferences, but
         // how you store the regID in your app is up to you.
-        return getSharedPreferences(disclaimer.class.getSimpleName(),
+        return context.getSharedPreferences(disclaimer.class.getSimpleName(),
                 Context.MODE_PRIVATE);
     }
 

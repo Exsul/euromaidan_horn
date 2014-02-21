@@ -1,7 +1,14 @@
 package net.exsul.euromaidan_horn;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.media.RingtoneManager;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.widget.EditText;
 import android.widget.Toast;
 import org.apache.http.HttpEntity;
@@ -24,10 +31,11 @@ import java.util.List;
 /**
  * Created by enela_000 on 21.02.14.
  */
-public class network extends AsyncTask<Void, Void, String[]> {
+public class network extends AsyncTask<Void, Void, Integer> {
     String send = null;
     String ToastMes = null;
-    chat me;
+    chat me = null;
+
     public network( chat _me, String _send ) {
         me = _me;
         send = _send;
@@ -37,8 +45,12 @@ public class network extends AsyncTask<Void, Void, String[]> {
         me = _me;
     }
 
+    public network( ) {
+
+    }
+
     @Override
-    protected String[] doInBackground(Void... params) {
+    protected Integer doInBackground(Void... params) {
         // http://www.androidsnippets.com/executing-a-http-post-request-with-httpclient
         // Create a new HttpClient and Post Header
         HttpClient httpclient = new DefaultHttpClient();
@@ -75,6 +87,7 @@ public class network extends AsyncTask<Void, Void, String[]> {
 
             ArrayList<String> stringArray = new ArrayList<String>();
             JSONArray jsonArray = obj.getJSONArray("chat");
+            Integer last_id = obj.getInt("last_id");
             for(int i = 0, count = jsonArray.length(); i < count; i++)
                 try {
                     //JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -83,7 +96,8 @@ public class network extends AsyncTask<Void, Void, String[]> {
                     e.printStackTrace();
                 }
             String []arr = stringArray.toArray(new String[0]);
-            return arr;
+            me.names = arr;
+            return last_id;
         } catch (JSONException e) {
 
         }
@@ -92,11 +106,37 @@ public class network extends AsyncTask<Void, Void, String[]> {
 
     @Override
     protected void onPreExecute() {
-        Toast.makeText(me.getApplicationContext(), "Начата передача данных", Toast.LENGTH_SHORT).show();
+        if (me != null)
+            Toast.makeText(me.getApplicationContext(), "Начата передача данных", Toast.LENGTH_SHORT).show();
     }
 
+    public static int NOTIFICATION_ID = 1;
+
     @Override
-    protected void onPostExecute(String[] msg) {
+    protected void onPostExecute(Integer msg) {
+        if (AlarmReceiver.GetLastId(disclaimer.context) < msg) {
+            AlarmReceiver.SetLastId(disclaimer.context, msg);
+            //We get a reference to the NotificationManager
+            NotificationManager notificationManager = (NotificationManager)disclaimer.context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+            String MyText = "Рупор майдана";
+            Notification mNotification = new Notification(R.drawable.icon, MyText, System.currentTimeMillis() );
+            //The three parameters are: 1. an icon, 2. a title, 3. time when the notification appears
+
+            String MyNotificationTitle = "Рупор майдана";
+            String MyNotificationText  = "Новые сообщения";
+
+            Intent MyIntent = new Intent(disclaimer.context, disclaimer.class);
+            PendingIntent StartIntent = PendingIntent.getActivity(disclaimer.context, 0, MyIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+            //A PendingIntent will be fired when the notification is clicked. The FLAG_CANCEL_CURRENT flag cancels the pendingintent
+
+            mNotification.setLatestEventInfo(disclaimer.context, MyNotificationTitle, MyNotificationText, StartIntent);
+
+            notificationManager.notify(NOTIFICATION_ID , mNotification);
+            //We are passing the notification to the NotificationManager with a unique id.
+        }
+        if (me == null)
+            return;
         if (ToastMes != null)
             Toast.makeText(me.getApplicationContext(), ToastMes, Toast.LENGTH_LONG).show();
         ((EditText)me.findViewById(R.id.editText)).setText("");
@@ -108,10 +148,8 @@ public class network extends AsyncTask<Void, Void, String[]> {
             }, 500);
             return;
         }
-        if (msg != null)
-            me.names = msg;
-        me.UpdateChat(me.names);
 
+        me.UpdateChat(me.names);
     }
 
     public String ReadResponse( final HttpResponse resp ) {

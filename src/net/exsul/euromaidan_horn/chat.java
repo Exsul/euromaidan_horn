@@ -1,6 +1,9 @@
 package net.exsul.euromaidan_horn;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,11 +35,14 @@ public class chat extends Activity {
             "Обновляем информацию с сервера"
     };
     static Boolean inited = false;
+    static Integer last_id = 0;
+    static Context c;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat);
+        c = getApplicationContext();
 
         UpdateChat(names);
 
@@ -54,16 +60,19 @@ public class chat extends Activity {
             final Handler h = new Handler();
             final int delay = 10 * 60 * 1000;//milli seconds
 
-            h.postDelayed(new Runnable(){
-                public void run()   {
-                    getData();
-                    //do something
-                    h.postDelayed(this,delay);
-                }
-            },
-               100);
+
+            setOnetimeTimer(c);
             inited = true;
         }
+    }
+
+    public void setOnetimeTimer(Context context) {
+        final int delay = 10 * 60 * 1000;//milli seconds
+        AlarmManager am=(AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, AlarmReceiver.class);
+        intent.putExtra("onetime", Boolean.FALSE);
+        PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), delay, pi);
     }
 
     @Override
