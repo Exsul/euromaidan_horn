@@ -47,9 +47,6 @@
       </layout>
     </layouts>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="GenyFilter" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="a9931167-1b0d-43e2-9e60-c697b45b7866" name="Default" comment="" />
     <ignored path="euromaidan_horn.iws" />
@@ -106,67 +103,7 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java" line="43" class="net.exsul.euromaidan_horn.network" package="net.exsul.euromaidan_horn">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java" line="112" class="net.exsul.euromaidan_horn.network" package="net.exsul.euromaidan_horn">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java" line="110" class="net.exsul.euromaidan_horn.network" package="net.exsul.euromaidan_horn">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java" line="85" class="net.exsul.euromaidan_horn.network" package="net.exsul.euromaidan_horn">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java" line="76" class="net.exsul.euromaidan_horn.network" package="net.exsul.euromaidan_horn">
+      <breakpoint url="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java" line="94" class="net.exsul.euromaidan_horn.network" package="net.exsul.euromaidan_horn">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -221,7 +158,7 @@
       <file leaf-file-name="chat.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="9" selection-start="2419" selection-end="2419" vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1326">
+            <state line="34" column="31" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
               <folding />
             </state>
           </provider>
@@ -239,13 +176,13 @@
       <file leaf-file-name="network.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="3854" selection-end="3854" vertical-scroll-proportion="0.33333334" vertical-offset="1709" max-vertical-offset="2788">
+            <state line="129" column="97" selection-start="4701" selection-end="4719" vertical-scroll-proportion="0.5192308" vertical-offset="1896" max-vertical-offset="3162">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1532#1547#0" expanded="true" />
-                <element signature="e#2600#2608#0" expanded="true" />
-                <element signature="e#3644#3763#0" expanded="true" />
-                <element signature="e#3748#3749#0" expanded="true" />
+                <element signature="e#1769#1784#0" expanded="true" />
+                <element signature="e#2837#2845#0" expanded="true" />
+                <element signature="e#3965#4084#0" expanded="true" />
+                <element signature="e#4069#4070#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -318,10 +255,10 @@
         <option value="$PROJECT_DIR$/src/net/exsul/euromaidan_horn/AsyncRegister.java" />
         <option value="$PROJECT_DIR$/res/layout/chat.xml" />
         <option value="$PROJECT_DIR$/src/net/exsul/euromaidan_horn/disclaimer.java" />
-        <option value="$PROJECT_DIR$/src/net/exsul/euromaidan_horn/chat.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/src/net/exsul/euromaidan_horn/chat.java" />
         <option value="$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java" />
       </list>
     </option>
@@ -675,7 +612,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16126418" sideWeight="0.8064133" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -684,7 +621,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29227322" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29227322" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39904988" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1073,13 +1010,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="45" selection-start="96" selection-end="96" vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.72649574" vertical-offset="68" max-vertical-offset="714">
@@ -1106,20 +1036,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="9" selection-start="2419" selection-end="2419" vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1326">
+        <state line="34" column="31" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="45" selection-start="96" selection-end="96" vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="170">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/exsul/euromaidan_horn/network.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="3854" selection-end="3854" vertical-scroll-proportion="0.33333334" vertical-offset="1709" max-vertical-offset="2788">
+        <state line="129" column="97" selection-start="4701" selection-end="4719" vertical-scroll-proportion="0.5192308" vertical-offset="1896" max-vertical-offset="3162">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1532#1547#0" expanded="true" />
-            <element signature="e#2600#2608#0" expanded="true" />
-            <element signature="e#3644#3763#0" expanded="true" />
-            <element signature="e#3748#3749#0" expanded="true" />
+            <element signature="e#1769#1784#0" expanded="true" />
+            <element signature="e#2837#2845#0" expanded="true" />
+            <element signature="e#3965#4084#0" expanded="true" />
+            <element signature="e#4069#4070#0" expanded="true" />
           </folding>
         </state>
       </provider>
