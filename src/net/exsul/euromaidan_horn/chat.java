@@ -27,11 +27,10 @@ import java.util.List;
  * Created by enela_000 on 21.02.14.
  */
 public class chat extends Activity {
-    String[] names = {
-            "Тестовое длинное сообщение о пересечении каких то улиц с контактным телефоном 12323123232131",
-            "Тестовое длинное сообщение о пересечении каких то улиц с контактным телефоном 12323123232131",
-            "Тестовое длинное сообщение о пересечении каких то улиц с контактным телефоном 12323123232131"
+    static String[] names = {
+            "Обновляем информацию с сервера"
     };
+    static Boolean inited = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,17 +49,20 @@ public class chat extends Activity {
             }
         });
 
-        final Handler h = new Handler();
-        final int delay = 5 * 60 * 1000;//milli seconds
+        if (!inited) {
+            final Handler h = new Handler();
+            final int delay = 10 * 60 * 1000;//milli seconds
 
-        h.postDelayed(new Runnable(){
-            public void run()   {
-                getData();
-                //do something
-                h.postDelayed(this,delay);
-            }
-        },
-           0);
+            h.postDelayed(new Runnable(){
+                public void run()   {
+                    getData();
+                    //do something
+                    h.postDelayed(this,delay);
+                }
+            },
+               100);
+            inited = true;
+        }
     }
 
     public void UpdateChat( String[] arr ) {
@@ -192,6 +194,7 @@ public class chat extends Activity {
                         e.printStackTrace();
                     }
                 String []arr = stringArray.toArray(new String[0]);
+                names = arr;
                 UpdateChat(arr);
             } catch (JSONException e) {
 
